@@ -63,6 +63,7 @@ int main()
                     {
                         //controller_List(listaPaisesExitosos);
                         controller_saveAsText("listaPaisesExitosos.csv",listaPaisesExitosos);
+                          printf("\nArchivo Generado");
                     }
                     else
                     {
@@ -81,6 +82,7 @@ int main()
                     {
                         //controller_List(listaPaisesEnElHorno);
                         controller_saveAsText("listaPaisesEnElHorno.csv",listaPaisesEnElHorno);
+                        printf("\nArchivo Generado");
                     }
                     else
                     {
