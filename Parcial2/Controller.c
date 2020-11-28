@@ -81,51 +81,11 @@ int asignarEstadistica(void* pPais)
     return retorno;
 }
 
-int paisesExitosos(void* pPais)
-{
-    int retorno = -1;
-    Pais* pais = pPais;
-    int recuperados;
 
-    if(pais != NULL)
-    {
-        pais_getRecuperados(pais, &recuperados);
-
-        if(recuperados < 5000){
-
-            retorno = 0;
-        }
-
-    }
-
-    return retorno;
-}
-
-int paisesEnElHorno(void* pPais)
-{
-    int retorno = -1;
-    Pais* pais = pPais;
-    int recuperados;
-    int infectados;
-
-    if(pais != NULL)
-    {
-        pais_getRecuperados(pais, &recuperados);
-        pais_getInfectados(pais, &infectados);
-
-        if(infectados == recuperados * 3){
-
-            retorno = 0;
-        }
-
-    }
-
-    return retorno;
-}
 
 /** \brief Listar paises
  *
- * \param pArrayListEmployee LinkedList*
+ * \param pArrayList LinkedList*
  * \return int
  *
  */
@@ -166,86 +126,55 @@ int controller_List(LinkedList* pArrayList)
 }
 
 
-
-/** \brief Ordenar Paises por cantidad de infectados
+/** \brief Guarda los datos de los empleados en el archivo data.csv (modo texto).
  *
- * \param pArrayListEmployee LinkedList*
+ * \param path char*
+ * \param pArrayList LinkedList*
  * \return int
  *
  */
-int controller_ordenarPais(LinkedList* pArrayList)
+int controller_saveAsText(char* path , LinkedList* pArrayList)
 {
+
     int retorno = -1;
-    /*int infectados;
-    int infectados2;*/
-    int flagSwap;
+    int len;
     int i;
-    int orden = 0;
-    int flagAviso = 0;
+    FILE* pFile;
+    Pais* auxPais = NULL;
+
+    int idStr;
+    char nombreStr[51];
+    int recuperadosStr;
+    int infectadosStr;
+    int muertosStr;
 
 
-    Pais* auxPais=NULL;
-    Pais* auxPais2=NULL;
-    Pais* auxSwap=NULL;
-
-    if( pArrayList != NULL)
+    if(pArrayList != NULL && path != NULL)
     {
+        pFile = fopen(path, "w");//abro el archivo en modo escritura
+        len = ll_len(pArrayList);
 
-        retorno = 0;
-        do
+        if(pFile != NULL)
         {
-            if(flagAviso == 0){
-                printf("\nOrdenando Lista ..\n");
-                flagAviso = 1;
-            }
-
-            flagSwap = 0;
-            for(i=0;i<ll_len(pArrayList) -1;i++)
+            fprintf(pFile, "Id,Nombre,Recuperados,Infectados,Muertos\n");
+            for(i=0; i<len; i++)
             {
+                auxPais = (Pais*) ll_get(pArrayList, i);
+                pais_getId(auxPais, &idStr);
+                pais_getNombre(auxPais, nombreStr);
+                pais_getRecuperados(auxPais, &recuperadosStr);
+                pais_getInfectados(auxPais, &infectadosStr);
+                pais_getMuertos(auxPais, &muertosStr);
 
-                auxPais = ll_get(pArrayList, i);
-                auxPais2 = ll_get(pArrayList, i+1);
-
-                if(auxPais != NULL && auxPais2 != NULL )
-                {
-
-                        if((auxPais->infectados > auxPais2->infectados && !orden) || (auxPais->infectados < auxPais2->infectados && orden)) //<------------
-                        {
-                            auxSwap = auxPais;
-                          //printf("\n%s",auxSwap->nombre);
-
-                            auxPais = auxPais2;
-                            auxPais2 = auxSwap;
-
-                            ll_set(pArrayList,i,auxPais);
-                            ll_set(pArrayList,i+1,auxPais2);
-
-
-                            flagSwap = 1;
-                        }
-                }
+                fprintf(pFile, "%d,%s,%d,%d,%d\n", idStr, nombreStr, recuperadosStr, infectadosStr,muertosStr);
             }
-        }while(flagSwap);
+        }
+        fclose(pFile);
+        retorno = 0;
     }
-
     return retorno;
 }
 
-/*int paisMasCastigado(LinkedList* this)
-{
-    int retorno = -1;
-    int i;
-    int cantidadMayorDeMuertos = 0;
-
-    if(this != NULL){
-
-        for(i=0;i<ll_len(this);i++){
-
-            if(cantidadMayorDeMuertos < )
-        }
-    }
-
-}*/
 
 
 

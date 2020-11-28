@@ -35,10 +35,6 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Controller.h" />
-		<Unit filename="Employee.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="Employee.h" />
 		<Unit filename="LinkedList.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -47,6 +43,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="Paises.h" />
+		<Unit filename="informes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="informes.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

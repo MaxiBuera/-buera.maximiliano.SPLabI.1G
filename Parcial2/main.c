@@ -5,6 +5,7 @@
 #include "Paises.h"
 #include "LinkedList.h"
 #include "Controller.h"
+#include "informes.h"
 
 
 int main()
@@ -60,7 +61,8 @@ int main()
                     listaPaisesExitosos = ll_filter(listaPaisesEstadistica, paisesExitosos);
                     if(listaPaisesExitosos != NULL)
                     {
-                        controller_List(listaPaisesExitosos);
+                        //controller_List(listaPaisesExitosos);
+                        controller_saveAsText("listaPaisesExitosos.csv",listaPaisesExitosos);
                     }
                     else
                     {
@@ -77,7 +79,8 @@ int main()
                     listaPaisesEnElHorno = ll_filter(listaPaisesEstadistica, paisesEnElHorno);
                     if(listaPaisesEnElHorno != NULL)
                     {
-                        controller_List(listaPaisesEnElHorno);
+                        //controller_List(listaPaisesEnElHorno);
+                        controller_saveAsText("listaPaisesEnElHorno.csv",listaPaisesEnElHorno);
                     }
                     else
                     {
@@ -90,8 +93,8 @@ int main()
                 break;
             case 6:
                 if(ll_len(listaPaises)!=0){
-                    controller_ordenarPais(listaPaises);
-                    printf("\nLista de Paises Ordenada");
+                    ordenarPais(listaPaises);
+                    controller_List(listaPaises);
                 }
                 else{
                     printf("\nNo hay paises en la lista");

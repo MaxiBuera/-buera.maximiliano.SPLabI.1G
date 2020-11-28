@@ -71,3 +71,80 @@
 
 1606522282 c:\users\maxii\desktop\parcial2\parcial2\paises.h
 
+1606521849 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1606521928 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\linkedlist.h
+
+1606524406 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\paises.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+	"Paises.h"
+
+1559691431 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\utn.h
+
+1606522282 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\paises.h
+
+1606524326 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	"LinkedList.h"
+	"parser.h"
+	"Paises.h"
+
+1606524326 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\parser.h
+
+1560474666 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1606525711 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"utn.h"
+	"LinkedList.h"
+	"parser.h"
+	"Paises.h"
+
+1606525756 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"utn.h"
+	"Paises.h"
+	"LinkedList.h"
+	"Controller.h"
+	"informes.h"
+
+1606525689 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\controller.h
+
+1606525312 c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\informes.h
+
+1606525312 source:c:\users\maxii\desktop\-buera.maximiliano.splabi.1g\parcial2\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<ctype.h>
+	<time.h>
+	"utn.h"
+	"LinkedList.h"
+	"parser.h"
+	"Paises.h"
+
